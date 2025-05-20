@@ -1,161 +1,84 @@
-/* Biotech Color Scheme */
+/* Light Green BioTech Color Scheme */
 :root {
-    --dna-blue: #00f3ff;
-    --lab-purple: #6a00ff;
-    --gene-green: #00ff88;
-    --dark-bg: #0a0a1a;
-    --neon-border: rgba(0, 243, 255, 0.3);
+    --primary-green: #e8f5e9;  /* Light green background */
+    --accent-green: #2e7d32;   /* Deep green for contrast */
+    --text-dark: #1a3d1a;       /* Dark green text */
+    --highlight-green: #81c784; /* Medium green accents */
+    --contrast-light: #ffffff;  /* White for contrast */
 }
 
 /* Base Styles */
 body {
     font-family: 'Courier New', monospace;
-    background: var(--dark-bg);
-    color: #fff;
+    background: var(--primary-green);
+    color: var(--text-dark);
     line-height: 1.6;
     margin: 0;
-    padding: 0;
+    padding: 20px;
 }
 
-/* DNA Navigation */
+/* Navigation */
 .dna-nav {
-    background: linear-gradient(to right, var(--lab-purple), var(--dark-bg));
+    background: linear-gradient(to right, var(--accent-green), var(--primary-green));
     padding: 1rem;
-    border-bottom: 2px solid var(--neon-border);
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    border-bottom: 2px solid var(--accent-green);
 }
 
 .glow-link {
-    color: var(--dna-blue);
+    color: var(--accent-green);
     text-decoration: none;
-    transition: text-shadow 0.3s;
+    transition: color 0.3s;
 }
 
 .glow-link:hover {
-    text-shadow: 0 0 10px var(--dna-blue);
-}
-
-/* Bio Header */
-.bio-header {
-    position: relative;
-    padding: 4rem 2rem;
-    text-align: center;
-    background: linear-gradient(45deg, #00172e, #000d1a);
-}
-
-.neon-text {
-    color: var(--dna-blue);
-    text-shadow: 0 0 15px var(--dna-blue);
-    font-size: 3rem;
+    color: var(--highlight-green);
 }
 
 /* Cards */
 .card {
-    background: rgba(0, 15, 30, 0.9);
-    border: 1px solid var(--neon-border);
+    background: var(--contrast-light);
+    border: 2px solid var(--accent-green);
     padding: 2rem;
     margin: 1rem 0;
-    border-radius: 5px;
-    position: relative;
-    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent, var(--dna-blue), transparent);
-    animation: dna-flow 20s linear infinite;
-}
-
-@keyframes dna-flow {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Skills Grid */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
+/* Skills Chips */
 .chip {
-    background: rgba(0, 243, 255, 0.1);
-    border: 1px solid var(--dna-blue);
+    background: var(--primary-green);
+    border: 1px solid var(--accent-green);
+    color: var(--text-dark);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     margin: 0.5rem;
-    display: inline-block;
 }
 
 /* Timeline */
-.timeline {
-    position: relative;
-    padding: 2rem 0;
-}
-
-.timeline-item {
-    display: flex;
-    margin: 4rem 0;
-}
-
 .timeline-marker {
-    width: 20px;
-    height: 20px;
-    background: var(--gene-green);
-    border-radius: 50%;
-    position: relative;
-    margin-right: 2rem;
-}
-
-.timeline-marker::after {
-    content: '';
-    position: absolute;
-    top: 30px;
-    left: 50%;
-    width: 2px;
-    height: 100px;
-    background: var(--dna-blue);
+    background: var(--accent-green);
+    border: 2px solid var(--contrast-light);
 }
 
 /* Project Stats */
-.project-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-
 .stat {
-    text-align: center;
-    padding: 1rem;
-    border: 1px solid var(--neon-border);
+    background: var(--contrast-light);
+    border: 2px solid var(--accent-green);
+    color: var(--text-dark);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-    }
-    
-    .neon-text {
-        font-size: 2rem;
-    }
-    
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
+/* Contrast Enhancements */
+h1, h2, h3 {
+    color: var(--accent-green);
+    border-bottom: 2px solid var(--highlight-green);
+    padding-bottom: 0.5rem;
+}
+
+a {
+    color: var(--accent-green);
+    font-weight: bold;
+}
+
+a:hover {
+    color: var(--highlight-green);
 }
