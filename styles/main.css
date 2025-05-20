@@ -1,0 +1,161 @@
+/* Biotech Color Scheme */
+:root {
+    --dna-blue: #00f3ff;
+    --lab-purple: #6a00ff;
+    --gene-green: #00ff88;
+    --dark-bg: #0a0a1a;
+    --neon-border: rgba(0, 243, 255, 0.3);
+}
+
+/* Base Styles */
+body {
+    font-family: 'Courier New', monospace;
+    background: var(--dark-bg);
+    color: #fff;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* DNA Navigation */
+.dna-nav {
+    background: linear-gradient(to right, var(--lab-purple), var(--dark-bg));
+    padding: 1rem;
+    border-bottom: 2px solid var(--neon-border);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.glow-link {
+    color: var(--dna-blue);
+    text-decoration: none;
+    transition: text-shadow 0.3s;
+}
+
+.glow-link:hover {
+    text-shadow: 0 0 10px var(--dna-blue);
+}
+
+/* Bio Header */
+.bio-header {
+    position: relative;
+    padding: 4rem 2rem;
+    text-align: center;
+    background: linear-gradient(45deg, #00172e, #000d1a);
+}
+
+.neon-text {
+    color: var(--dna-blue);
+    text-shadow: 0 0 15px var(--dna-blue);
+    font-size: 3rem;
+}
+
+/* Cards */
+.card {
+    background: rgba(0, 15, 30, 0.9);
+    border: 1px solid var(--neon-border);
+    padding: 2rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, var(--dna-blue), transparent);
+    animation: dna-flow 20s linear infinite;
+}
+
+@keyframes dna-flow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.chip {
+    background: rgba(0, 243, 255, 0.1);
+    border: 1px solid var(--dna-blue);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    margin: 0.5rem;
+    display: inline-block;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline-item {
+    display: flex;
+    margin: 4rem 0;
+}
+
+.timeline-marker {
+    width: 20px;
+    height: 20px;
+    background: var(--gene-green);
+    border-radius: 50%;
+    position: relative;
+    margin-right: 2rem;
+}
+
+.timeline-marker::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 2px;
+    height: 100px;
+    background: var(--dna-blue);
+}
+
+/* Project Stats */
+.project-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid var(--neon-border);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+    }
+    
+    .neon-text {
+        font-size: 2rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
